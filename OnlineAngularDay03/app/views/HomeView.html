@@ -1,0 +1,29 @@
+﻿<div class="form-inline">
+    <input class="form-control" ng-model="InputName" placeholder="Book Name"/>
+    <input class="form-control" ng-model="InputAuthor" placeholder="Author Name"/>
+    <input class="form-control" ng-model="InputGenre" placeholder="Genre"/>
+    <button class="btn btn-success" ng-click="addBook();">Add</button>
+</div>
+
+<!-- Table to display our book array -->
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Book Name</th>
+            <th>Author Name</th>
+            <th>Genre</th>
+            <th>Detail</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- ng-repeat="var in arrayName" -->
+        <tr ng-repeat="x in books">
+            <td>{{x.name}}</td>
+            <td>{{x.author}}</td>
+            <td>{{x.genre}}</td>
+            <td><a href="#/Details/{{$index}}" class="btn btn-info">Details</a></td>
+        </tr>
+    </tbody>
+</table>
+<!-- button to console log both arrays -->
+<!--<button ng-click="logArrays()" class="btn btn-primary">Log</button>-->
